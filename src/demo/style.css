@@ -1,0 +1,124 @@
+:root {
+  color: #182230;
+  background: #f3f6fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.demo-shell {
+  width: min(1040px, calc(100vw - 40px));
+  margin: 32px auto;
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.demo-header p {
+  margin: 0 0 6px;
+  color: #576579;
+  font-size: 14px;
+}
+
+.demo-header h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar button,
+.activity-panel button {
+  border: 1px solid #cdd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #243043;
+  cursor: pointer;
+}
+
+.toolbar button {
+  padding: 8px 12px;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  display: grid;
+  gap: 10px;
+  min-height: 120px;
+  padding: 18px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: white;
+}
+
+.metric-card span {
+  color: #5b667a;
+}
+
+.metric-card strong {
+  font-size: 38px;
+}
+
+.metric-card.blue {
+  border-top: 4px solid #1677ff;
+}
+
+.metric-card.green {
+  border-top: 4px solid #16a34a;
+}
+
+.metric-card.rose {
+  border-top: 4px solid #e11d48;
+}
+
+.activity-panel {
+  padding: 18px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: white;
+}
+
+.activity-panel h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.activity-panel ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity-panel button {
+  width: 100%;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.activity-panel .active-row {
+  border-color: #1677ff;
+  background: #e6f4ff;
+}

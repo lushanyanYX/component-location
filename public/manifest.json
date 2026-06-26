@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Component Location",
+  "description": "Inspect React dev DOM elements and open their local source location.",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "storage", "clipboardWrite"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "http://[::1]/*",
+    "https://localhost/*",
+    "https://127.0.0.1/*",
+    "https://[::1]/*"
+  ],
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Component Location",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*",
+        "http://127.0.0.1/*",
+        "http://[::1]/*",
+        "https://localhost/*",
+        "https://127.0.0.1/*",
+        "https://[::1]/*"
+      ],
+      "js": ["assets/pageBridgeMain.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "http://localhost/*",
+        "http://127.0.0.1/*",
+        "http://[::1]/*",
+        "https://localhost/*",
+        "https://127.0.0.1/*",
+        "https://[::1]/*"
+      ],
+      "js": ["assets/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-lock": {
+      "suggested_key": {
+        "default": "Alt+L",
+        "mac": "Alt+L"
+      },
+      "description": "Clear the selected element"
+    }
+  }
+}
